@@ -74,7 +74,14 @@ if (keyDown("ENTER")){
 
 if(gameState === "play") {
     
-  
+	var rand = Math.round(random(1,2));
+	if(rand===1){
+	  spawnpowerup1();
+	}
+	if(rand===2){
+	 spawnpowerup2(); 
+	}
+
   bounceUFO();
  spawnpowerup();
  /*heart.visible=true;
@@ -499,7 +506,7 @@ function destroyUFO() {
 	}
 }
 	function spawnpowerup(){
-  if(World.frameCount%400===0){
+  if(World.frameCount%20===0){
      var powerup= createSprite(400, Math.round(random(170, 230)), 10, 10);
      powerup.addImage(powerupimg);
      powerup.velocityX = -3;
@@ -523,7 +530,7 @@ function spawnpowerup1(){
     UFO6.destroy();
     UFO7.destroy();
 	playerScore=playerScore+7;
-	if(playerScore=18){
+	if(playerScore===18){
 	 playerScore=playerScore+3;
 	}
   }
@@ -531,22 +538,30 @@ function spawnpowerup1(){
  function spawnpowerup2(){
    if (PowerupGroup.isTouching(bullet)){
     
-     var bullet2=createSprite(60,0);
-     var bullet3=createSprite(120,0);
+	 var bullet2=createSprite(60,0);
+	 bullet2.scale=0.05;
+	 var bullet3=createSprite(120,0);
+	 bullet3.scale=0.05;
      var bullet4=createSprite(180,0);
-     var bullet5=createSprite(240,0);
-     var bullet6=createSprite(300,0);
-     var bullet7=createSprite(360,0);
-     var bullet8=createSprite(420,0);
-     var bullet9=createSprite(480,0);
-     bullet2.addImage(bullet2Image);
-     bullet3.addImage(bullet2Image);
-     bullet4.addImage(bullet2Image);
-     bullet5.addImage(bullet2Image);
-     bullet6.addImage(bullet2Image);
-     bullet7.addImage(bullet2Image);
-     bullet8.addImage(bullet2Image);
-     bullet9.addImage(bullet2Image);
+	 bullet4.scale=0.05;
+	 var bullet5=createSprite(240,0);
+	 bullet5.scale=0.05;
+	 var bullet6=createSprite(300,0);
+	 bullet6.scale=0.05;
+	 var bullet7=createSprite(360,0);
+	 bullet7.scale=0.05;
+	 var bullet8=createSprite(420,0);
+	 bullet8.scale=0.05;
+	 var bullet9=createSprite(480,0);
+	 bullet9.scale=0.05;
+	 bullet2.addImage(Bullet2Image);
+     bullet3.addImage(Bullet2Image);
+     bullet4.addImage(Bullet2Image);
+     bullet5.addImage(Bullet2Image);
+     bullet6.addImage(Bullet2Image);
+     bullet7.addImage(Bullet2Image);
+     bullet8.addImage(Bullet2Image);
+     bullet9.addImage(Bullet2Image);
      bulletGroup.add(bullet2);
      bulletGroup.add(bullet3);
      bulletGroup.add(bullet4);
